@@ -1,0 +1,8 @@
+<?php $this->h1 = $this->listname?>
+<ul data-role="listview">
+<?php
+foreach ($this->tasks as $task):
+?>
+    <li><?php echo $task->title()?></li>
+<?php endforeach?>
+</ul>

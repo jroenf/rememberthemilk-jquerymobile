@@ -1,0 +1,21 @@
+<ul data-role="listview" data-inset="true" data-count-theme="b">
+    <li data-role="list-divider"><?php echo $this->header?></li>
+<?php
+foreach ($this->lists as $list => $listInfo):
+?>
+<li>
+<a href="<?php echo $this->url(
+    array(
+        'controller'=>'index',
+        'action'=>'list',
+        'id'=>$list))?>">
+        <?php echo $list?>
+        <span class="ui-li-count" data-="">
+            <?php echo $listInfo->count()?>
+        </span>
+        
+    </a>
+</li>
+<?php endforeach?>
+</ul>
+

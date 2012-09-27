@@ -1,0 +1,78 @@
+#000	(txt emph zwart)
+#333	(txt normal)
+#575757 (lichtgrijs txt op wit)
+
+#ffc	(geel hover blok)
+#E8EEF7	(lichtblauw, block hover)
+
+#cacaca	(border)
+#f9f9f9	(background bijna wit)
+
+#0060BF	(rtm blauw & !3)
+#359AFF	(!2)
+#EA5200 (!1)
+
+I want to build a project with rtm, for practice and proof of webdeveloper skills. Name of the project is getmilkdone. You know what the name means. Even better: users will too. But I do not know what this name is about and never will.
+The application (gmd from here) is a mobile app (website) presenting rtm tasks in a pleasant user interface, adding little functionality to help the user organised. I use 'smart tagging', learned it from your blog probably. I use a dot-prefix tag (.) to assign tasks to projects. 
+
+This mail will  describe:
+- the product
+  + short description
+  + list of functionality
+  + design
+- used techniques
+- action list
+
+I want to build a project with rtm, for practice and proof of skills. Name of the project is getmilkdone (alt. name: 7milkdone). You know what the name means. Even better: users will too. But most importantly: I do NOT know what this name is about and never will.
+This mail starts with a description of the app, being a mobile website, and it's functionality. It is followed by used techniques. Don't forget to check the 'proof of concept' links in the end!
+
+** App description and functionality
+The application is a mobile website presenting rtm tasks in a pleasant user interface, Focus is simplicity (sounds familiar?), showing only (about) 7 'active' tasks upon login. 'App defined' tasks tell the user (how) to manage his tasks.
+Added user functionality:
+- add projects, add tasks to projects
+- task state to 'active' or 'someday' (projects too)
+App functionality:
+- shows 'activated' tags list
+- adds 'review tasks' task  ('after week'), instructing user (how) to do weekly review (I love your 'after' functionality!) 
+- monitor projects, prompts user (=adds active task!) to:
+  * if project has no tasks -> please define tasks | set project-state 'pending' | delete project
+  * if project has no active tags -> please activate tasks from project ... 
+  * if 3 or less  tasks are active -> please activate tasks
+- groups smart lists in a nice way
+
+** Following section 'used techniques' is in four parts: 
+rtm, 
+API-communication: ZendFramework, 
+frontend design: jQuery-mobile, 
+code-hosting: GitHub
+
+** Used techniques: RTM
+Off course I use rtm myself. I use a system of  'smart tagging', learned it from your blog probably. I've worked and tweaked this system for some time now and have really become familiar with it. 
+Short version: I use a dot-prefixed tags to assign tasks to projects, underscore-prefixed tags to distrinct professional from private tasks, hyphen-prefixed tags to assign handling  to tasks (active, someday, 2read, waiting4). 
+Smart lists are part of the smart tagging system and used to filter tasks: oneDay, oneWeek, oneMonth,  TodoToday, TagMe, SomeDay, WaitingFor, Projects(active), Projects(pending). Recently I have been missing a nice way to organise my (large list of) smart tags.
+Besides smart tagging I have set up an repeating task 'after week' telling me to review my tasks and projects. Recently I have been feeling the urge to add task-organisational-tasks (no typo) automatically (conditionally) but rtm does not provide such a functionality.
+The getmilkdone website forms a layer over this system. The user does not need to know about smart tagging or conditional appended tasks etc. The user will see his rtm tasks, with added project functionality, and will get auto-tasks telling him (how) to perform needed task-management.
+I use smart tags. Does the API support prefixed (with dot, underscore and hyphen) tags?
+
+** Used techniques: API-communication ZendFramework
+No php library? No javaScript library? I don't know why a library is needed. All you need is a REST-client server, and 'port' the methods, right?!  I am familiar with the Zend_Rest_Client from Zend Framework and will use it, although it feels totally wrong. One layer too much. Once the user is authenticated, javascript can make the calls directly. Am I seeing things right here? We could sure use json for this! For programmers ease I will use the Zend_Rest_Client. I used a client from the Zend_Framework to read the atom links of my 'test' account on RTM, see links below.
+
+** Used techniques - Frontend design: jQuery-mobile
+I will present the website in jQuery mobile. That's easy. I just 'rolled out' a theme. Copying your distinctive milky white background etc. was nice! FYI: I found a typo in your inline-css. The html-element with id="tools-spacer". The border (is) color(ed).
+Apart from the jQuery mobile's ease of use I must say I am a big fan of new CSS techniques like the (hardware accelerated!) animation, transitions and 3D-transformations.
+
+** Used techniques - Code hosting: GitHub
+I want to make this a public project on GitHub.
+
+** Proof of concept:
+The atom feeds read with Zend_Framework presented in jQuery mobile:
+http://www.werktie.nl/rtm/rtm
+Theme for website:
+http://jquerymobile.com//themeroller/index.php?style_id=20111114-124
+I hope this is not in conflict with the API Terms of use 1-b-i
+
+One developer API Key please.
+Kind regards
+Jeroen Franse
+
+PS: do you need a callback adress for authentication? Does it need to be a 'dedicated' domain, or can I use a development adress?
